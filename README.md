@@ -71,6 +71,31 @@ Troubleshooting
    Powerline symbols or the standalone `PowerlineSymbols.otf` font. Then make
    sure your `~/.tmux.conf.local` copy uses the right code points for
    `tmux_conf_theme_left_separator_XXX` values.
+   
+ - **Powerline install with vim integration.(Optional if you want to make vim look better)**
+    
+    ref: https://powerline.readthedocs.io/en/latest/installation/linux.html
+    
+    `pip3 install --user powerline-status`
+
+    install powerline patched fonts/font config: https://powerline.readthedocs.io/en/latest/installation/linux.html#fonts-installation
+    if you are using patched fonts, make sure your terminal's font is set to one of the patched fonts.
+
+    in ~/.vimrc config
+    ```
+    set rtp+=$HOME/.local/lib/python3.6/site-packages/powerline/bindings/vim/`
+    always show statusline
+    set laststatus=2
+    use 256 colours
+    set t_Co=256
+    ```
+
+    ~/.bashrc, source powerline.sh
+    ```
+    if [ -f ~/.local/lib/python3/6/site-packages/powerline/bindings/bash/powerline.sh ]; then
+        source ~/.local/lib/python3/6/site-packages/powerline/bindings/bash/powerline.sh
+    fi
+    ```
 
  - **I'm using Bash On Windows (WSL), colors and Powerline look are broken.**
 
